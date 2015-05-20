@@ -1,31 +1,36 @@
+const doLog = Symbol("logs a statement"),
+    removeNew = Symbol("removes the new class"),
+    scrollDown = Symbol("scrolls down"),
+    getHtml = Symbol("creates HTML for a new line");
+
 class Logger {
     constructor(selector) {
         this.$console = $(selector);
     }
 
     log(msg) {
-        this.handle = this._doLog(msg);
+        this.handle = this[doLog](msg);
     }
 
-    _doLog(msg) {
+    [doLog](msg) {
         window.clearTimeout(this.handle);
-        this._removeNew();
-        this.$console.append(this._getHtml(msg));
-        return this._scrollDown();
+        this[removeNew]();
+        this.$console.append(this[getHtml](msg));
+        return this[scrollDown]();
     }
 
-    _removeNew() {
+    [removeNew]() {
         this.$console.find("p").last().removeClass("new");
     }
 
-    _scrollDown() {
+    [scrollDown]() {
         var _this = this;
         return window.setTimeout(function () {
             _this.$console.scrollTop(_this.$console.prop("scrollHeight"));
         }, 100);
     }
 
-    _getHtml(msg) {
+    [getHtml](msg) {
         return "<p class=\"new\">" + msg + "</p>";
     }
 }
