@@ -1,0 +1,23 @@
+{
+  "name": "es6talk",
+  "version": "0.0.1",
+  "description": "Code examples from by talk about ECMAScript 6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "Patrick Hund <pahund@team-mobile.de>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "babel": "~5.4.3",
+    "babel-core": "~5.4.3",
+    "babel-loader": "~5.1.2",
+    "babel-runtime": "~5.4.3",
+    "node-libs-browser": "^0.5.0",
+    "webpack": "~1.9.7",
+    "webpack-dev-server": "~1.8.2"
+  }
+}

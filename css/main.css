@@ -1,0 +1,99 @@
+body {
+    padding: 15px;
+}
+
+.console {
+    font-family: monospace;
+    background-color: #000000;
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.console p {
+    margin: 0;
+    color: green;
+}
+
+.console p.new {
+    color: lime;
+}
+
+.console p.cyan {
+    color: darkcyan;
+}
+
+.console p.new.cyan {
+    color: cyan;
+}
+
+.console p.yellow {
+    color: goldenrod;
+}
+
+.console p.new.yellow {
+    color: yellow;
+}
+
+.console p.red {
+    color: darkred;
+}
+
+.console p.new.red {
+    color: red;
+}
+
+.console p.pink {
+    color: hotpink;
+}
+
+.console p.new.pink {
+    color: deeppink;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.result {
+    font-family: monospace;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: lightpink;
+}
+
+.result .glyphicon-ok {
+    display: none;
+}
+
+.result.ok {
+    background-color: lightgreen;
+}
+
+.result.ok .glyphicon-ok {
+    display: inline-block;
+}
+
+.result.ok .glyphicon-remove {
+    display: none;
+}
+
+.result.blue {
+    background-color: lightblue;
+}
+
+#followme {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
