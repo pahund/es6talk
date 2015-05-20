@@ -17,6 +17,8 @@ To install all required npm packages and transpile the ES6 to "old school" JavaS
 You can then open up one of the example HTML files in your browser:
 
 * [Example 1 &mdash; Modules and Classes](01_modules_classes/index.html)
+* [Example 2 &mdash; Promises](02_promises/index.html)
+* [Example 3 &mdash; Arrows and Spread Operators](03_arrow_spread/index.html)
 
 If you want to fiddle around with the ES6 code in the examples, you can run a webpack dev server that automatically
 updates the page with this command:
@@ -27,4 +29,6 @@ You can then go to [localhost:8080](http://localhost:8080/) in your browser and 
 call them directly with one of these links:
 
 * [Example 1 &mdash; Modules and Classes](http://localhost:8080/01_modules_classes/)
+* [Example 2 &mdash; Promises](http://localhost:8080/02_promises/)
+* [Example 3 &mdash; Arrows and Spread Operators](http://localhost:8080/03_arrow_spread/)
 
