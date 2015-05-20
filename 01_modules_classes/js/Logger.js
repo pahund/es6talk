@@ -1,11 +1,3 @@
-/**
- * Logger.js
- *
- * Logs stuff to my beautiful console box.
- *
- * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
- * @since 20 May 2015
- */
 define(function () {
     function Logger(selector) {
         this.$console = $(selector);
