@@ -16,8 +16,10 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname,
-        filename: "dist/[name].bundle.js"
+        path: __dirname + "/dist",
+        publicPath: "../dist/",
+        filename: "[name].bundle.js",
+        chunkFilename: "[id].bundle.js"
     },
     module: {
         loaders: [
