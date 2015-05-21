@@ -1,9 +1,11 @@
-/**
- * main.js
- *
- * Example 1: Modules and Classes
- *
- * @author <a href="mailto:pahund@team.mobile.de">Patrick Hund</a>
- * @since 20 May 2015
- */
+import Logger from "./Logger";
+
+const logger = new Logger("#console");
+
+$("#foo").click(function () {
+    logger.log("foo");
+});
+$("#bar").click(function () {
+    logger.log("bar");
+});
 
