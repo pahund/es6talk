@@ -4,9 +4,7 @@ function iterate() {
         return function () {
             var prev = Array.prototype.slice.call(arguments);
             items.forEach(function (item) {
-                if (typeof callback === "function") {
-                    callback.apply(null, prev.concat(item));
-                }
+                callback.apply(null, prev.concat(item));
             });
         };
     };
