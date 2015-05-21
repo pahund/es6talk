@@ -1,20 +1,15 @@
 import Logger from "./Logger";
+import iterate from "./iterate";
+import nest from "./nest";
 
 const logger = new Logger("#console"),
 
-    roman = ["I", "II", "III"],
-    arabic = [1, 2, 3],
-    alphabetical = ["a", "b", "c"];
+    roman = iterate("I", "II", "III"),
+    arabic = iterate(1, 2, 3),
+    alphabetical = iterate("a", "b", "c");
 
 function logIt(rom, arab, alpha) {
     logger.log(rom + ". " + arab + ". " + alpha + ")");
 }
 
-for (let romanI = 0; romanI < roman.length; romanI++) {
-    for (let arabicI = 0; arabicI < arabic.length; arabicI++) {
-        for (let alphabeticalI = 0; alphabeticalI < alphabetical.length; alphabeticalI++) {
-            logIt(roman[romanI], alphabetical[alphabeticalI], arabic[arabicI]);
-        }
-    }
-}
-
+nest(roman, arabic, alphabetical, logIt);
