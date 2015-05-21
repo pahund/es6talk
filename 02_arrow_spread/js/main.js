@@ -1,4 +1,5 @@
-import Logger from "./Logger"
+import Logger from "./Logger";
+
 const logger = new Logger("#console"),
 
     roman = ["I", "II", "III"],
