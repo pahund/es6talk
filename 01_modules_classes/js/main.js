@@ -2,6 +2,12 @@ require([
     "./Logger"
 ], function (Logger) {
     var logger = new Logger("#console");
-    logger.log("Hi freaks!");
+
+    $("#foo").click(function () {
+        logger.log("foo");
+    });
+    $("#bar").click(function () {
+        logger.log("bar");
+    });
 })
 
