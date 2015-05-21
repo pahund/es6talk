@@ -1,7 +1,5 @@
 function nest(...functions) {
-    functions.reduceRight(function (prev, curr) {
-        return curr(prev);
-    })();
+    functions.reduceRight((prev, curr) => curr(prev))();
 }
 
 export default nest;
