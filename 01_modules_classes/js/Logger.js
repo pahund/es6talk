@@ -24,10 +24,7 @@ class Logger {
     }
 
     [scrollDown]() {
-        var _this = this;
-        return window.setTimeout(function () {
-            _this.$console.scrollTop(_this.$console.prop("scrollHeight"));
-        }, 100);
+        return window.setTimeout(() => this.$console.scrollTop(this.$console.prop("scrollHeight")), 100);
     }
 
     [getHtml](msg) {
