@@ -1,5 +1,4 @@
-function nest() {
-    var functions = Array.prototype.slice.call(arguments);
+function nest(...functions) {
     functions.reduceRight(function (prev, curr) {
         return curr(prev);
     })();
