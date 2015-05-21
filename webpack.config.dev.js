@@ -8,11 +8,11 @@ module.exports = {
         ],
         example02: [
             "webpack/hot/dev-server",
-            "./02_promises/js/main.js"
+            "./02_arrow_spread/js/main.js"
         ],
         example03: [
             "webpack/hot/dev-server",
-            "./03_arrow_spread/js/main.js"
+            "./03_promises/js/main.js"
         ]
     },
     output: {
