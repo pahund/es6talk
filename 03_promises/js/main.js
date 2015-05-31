@@ -21,7 +21,6 @@ $startButton.click(() => {
     }).then(() => {
         logger.log("models loaded");
         $modelDropdown.prop("disabled", false);
-        return new Promise(resolve => resolve());
     }).then(() => {
         $makeDropdown.change(() => {
             logger.log("make changed: " + $makeDropdown.val());
