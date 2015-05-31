@@ -45,6 +45,7 @@ to ES6, which I presented at my talk:
 * [step2](https://github.com/pahund/es6talk/tree/step2) &mdash; refactoring step 2 
 * [step3](https://github.com/pahund/es6talk/tree/step3) &mdash; refactoring step 3 
 * [step4](https://github.com/pahund/es6talk/tree/step4) &mdash; refactoring step 4 
+* [step5](https://github.com/pahund/es6talk/tree/step5) &mdash; refactoring step 5 
 * [after](https://github.com/pahund/es6talk/tree/after) &mdash; the final result
 
 ## Tools Used in the Code Examples
