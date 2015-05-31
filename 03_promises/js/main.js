@@ -17,10 +17,12 @@ $startButton.click(() => {
     loadMakes().then(() => {
         logger.log("makes loaded");
         $makeDropdown.prop("disabled", false);
-        loadModels().then(() => {
-            logger.log("models loaded");
-            $modelDropdown.prop("disabled", false);
-        });
+        return loadModels();
+    }).then(() => {
+        logger.log("models loaded");
+        $modelDropdown.prop("disabled", false);
+        return new Promise(resolve => resolve());
+    }).then(() => {
         $makeDropdown.change(() => {
             logger.log("make changed: " + $makeDropdown.val());
             loadModels();
