@@ -1,6 +1,10 @@
 # es6talk
 
-Code examples from Patrick Hund's talk about ECMAScript 6.
+Code examples from Patrick Hund's talk about ECMAScript 6, held at the eBay Classifieds Group TechCon in Montreal,
+Canada in June 2015.
+
+* You can find the talk notes to accompany these examples on [Workflowy](https://workflowy.com/s/bYXDNfjTGt)
+* Slides are available on [SlideShare](http://de.slideshare.net/wiekatz/techcon-2015patrickhundes6)
 
 ## Installation
 
