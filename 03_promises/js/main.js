@@ -14,7 +14,11 @@ $startButton.click(() => {
     logger.log("started! weeee!")
     $startButton.prop("disabled", true);
 
-    loadMakes().then(handleMakesLoaded).then(handleModelsLoaded).then(initMakeChangeHandler);
+    loadMakes()
+            .then(handleMakesLoaded)
+            .then(handleModelsLoaded)
+            .then(initMakeChangeHandler)
+            .catch(() => logger.log("OMG, it didn't work!"));
 });
 
 function handleMakesLoaded() {
@@ -36,23 +40,23 @@ function initMakeChangeHandler() {
 }
 
 function loadMakes() {
-    return new Promise(resolve =>
-        loadJsonp("//m.mobile.de/svc/r/makes/Car", makeData => {
+    return new Promise((resolve, reject) =>
+        loadJsonp("//m.mobile.de/svc/r/makes/CarXXX", makeData => {
             makeData.makes.forEach(
                     make => $makeDropdown.append("<option value=\"" + make.i + "\">" + make.n + "</option>"));
             resolve();
-    }));
+        }, () => reject()));
 }
 
 function loadModels() {
     const makeId = $makeDropdown.val();
     $modelDropdown.find("option").remove();
-    return new Promise(resolve =>
+    return new Promise((resolve, reject) =>
         loadJsonp("//m.mobile.de/svc/r/models/" + makeId, modelData => {
             modelData.models.forEach(
                     model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>"));
             resolve();
-    }));
+        }, () => reject()));
 }
 
 
