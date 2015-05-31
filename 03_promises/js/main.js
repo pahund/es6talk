@@ -26,7 +26,6 @@ function handleMakesLoaded() {
 function handleModelsLoaded() {
     logger.log("models loaded");
     $modelDropdown.prop("disabled", false);
-    return new Promise(resolve => resolve());
 }
 
 function initMakeChangeHandler() {
