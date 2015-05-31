@@ -1,9 +1,5 @@
-function loadJsonp(url, success, failure) {
+function loadJsonp(url, success = () => {}, failure = () => { throw new Error("error loading data from " + url); }) {
     const script = document.createElement("script");
-
-    failure = failure || (() => {
-        logger.log("error loading data from " + url);
-    });
 
     let timeoutHandler = window.setTimeout(() => {
         window.jsonpCallback = () => {};
