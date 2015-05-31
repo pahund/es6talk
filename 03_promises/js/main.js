@@ -14,21 +14,27 @@ $startButton.click(() => {
     logger.log("started! weeee!")
     $startButton.prop("disabled", true);
 
-    loadMakes().then(() => {
-        logger.log("makes loaded");
-        $makeDropdown.prop("disabled", false);
-        return loadModels();
-    }).then(() => {
-        logger.log("models loaded");
-        $modelDropdown.prop("disabled", false);
-        return new Promise(resolve => resolve());
-    }).then(() => {
-        $makeDropdown.change(() => {
-            logger.log("make changed: " + $makeDropdown.val());
-            loadModels();
-        });
-    });
+    loadMakes().then(handleMakesLoaded).then(handleModelsLoaded).then(initMakeChangeHandler);
 });
+
+function handleMakesLoaded() {
+    logger.log("makes loaded");
+    $makeDropdown.prop("disabled", false);
+    return loadModels();
+}
+
+function handleModelsLoaded() {
+    logger.log("models loaded");
+    $modelDropdown.prop("disabled", false);
+    return new Promise(resolve => resolve());
+}
+
+function initMakeChangeHandler() {
+    $makeDropdown.change(() => {
+        logger.log("make changed: " + $makeDropdown.val());
+        loadModels();
+    });
+}
 
 function loadMakes() {
     return new Promise(resolve =>
