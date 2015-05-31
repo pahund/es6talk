@@ -46,3 +46,51 @@ to ES6, which I presented at my talk:
 * [step3](https://github.com/pahund/es6talk/tree/step3) &mdash; refactoring step 3 
 * [step4](https://github.com/pahund/es6talk/tree/step4) &mdash; refactoring step 4 
 * [after](https://github.com/pahund/es6talk/tree/after) &mdash; the final result
+
+## Tools Used in the Code Examples
+
+* [webpack](http://webpack.github.io/) module bundler &mdash; Copyright (C) 2012-2015 Tobias Koppers;
+  [MIT License](https://github.com/webpack/webpack/blob/master/LICENSE)
+* [Babel](https://babeljs.io/) JavaScript compiler &mdash; Copyright (C) 2014-2015 Sebastian McKenzie;
+  [MIT License](https://github.com/babel/babel/blob/master/LICENSE)
+* [npm](https://www.npmjs.com/) package manager &mdash; Copyright (c) npm, Inc. and Contributors. All rights reserved;
+  [The Artistic License 2.0](https://www.npmjs.com/policies/npm-license)
+* [jQuery](http://jquery.com/) JavaScript library &mdash; Copyright jQuery Foundation and other contributors;
+  [MIT License](https://github.com/jquery/jquery/blob/master/LICENSE.txt)
+* [Bootstrap](http://getbootstrap.com/) HTML/CSS/JS framework &mdash; Copyright (c) 2011-2015 Twitter, Inc;
+  [MIT License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+## Recommended Reading
+
+Here's a short list of great resources for those who are interested in learning about ECMAScript 6:
+
+* Nicholas C. Zachas: [Understanding ECMAScript 6](https://leanpub.com/understandinges6/)
+* [Learn ES6](https://babeljs.io/docs/learn-es6/) on Babel.io
+* Axel Rauschmayer's [JavaScript blog](http://www.2ality.com/)
+
+Also, don't forget to [check out our eBay Technology Blog](http://technology.ebay.de/),
+and follow me on Twitter: [@wiekatz](https://twitter.com/wiekatz/)
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2015 mobile.de GmbH
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
