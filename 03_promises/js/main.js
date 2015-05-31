@@ -39,10 +39,11 @@ function loadMakes(callback = (() => {})) {
 function loadModels(callback = (() => {})) {
     const makeId = $makeDropdown.val();
     $modelDropdown.find("option").remove();
-    loadJsonp("//m.mobile.de/svc/r/models/" + makeId,
-            modelData => modelData.models.forEach(
-                model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>")));
-    callback();
+    loadJsonp("//m.mobile.de/svc/r/models/" + makeId, modelData => {
+        modelData.models.forEach(
+                model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>"));
+        callback();
+    });
 }
 
 
