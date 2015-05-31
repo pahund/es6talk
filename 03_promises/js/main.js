@@ -14,28 +14,35 @@ $startButton.click(() => {
     logger.log("started! weeee!")
     $startButton.prop("disabled", true);
 
-    loadJsonp("//m.mobile.de/svc/r/makes/Car", makeData => {
+    loadMakes(() => {
         logger.log("makes loaded");
-        makeData.makes.forEach(
-                make => $makeDropdown.append("<option value=\"" + make.i + "\">" + make.n + "</option>"));
         $makeDropdown.prop("disabled", false);
-
-        loadJsonp("//m.mobile.de/svc/r/models/" + makeData.makes[0].i, modelData => {
+        loadModels(() => {
             logger.log("models loaded");
-            modelData.models.forEach(
-                    model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>"));
             $modelDropdown.prop("disabled", false);
         });
-
         $makeDropdown.change(() => {
-            const makeId = $makeDropdown.val();
-            logger.log("make changed: " + makeId);
-            $modelDropdown.find("option").remove();
-            loadJsonp("//m.mobile.de/svc/r/models/" + makeId,
-                    modelData => modelData.models.forEach(
-                            model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>")));
+            logger.log("make changed: " + $makeDropdown.val());
+            loadModels();
         });
     });
 });
+
+function loadMakes(callback = (() => {})) {
+    loadJsonp("//m.mobile.de/svc/r/makes/Car", makeData => {
+        makeData.makes.forEach(
+                make => $makeDropdown.append("<option value=\"" + make.i + "\">" + make.n + "</option>"));
+        callback();
+    });
+}
+
+function loadModels(callback = (() => {})) {
+    const makeId = $makeDropdown.val();
+    $modelDropdown.find("option").remove();
+    loadJsonp("//m.mobile.de/svc/r/models/" + makeId,
+            modelData => modelData.models.forEach(
+                model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>")));
+    callback();
+}
 
 
