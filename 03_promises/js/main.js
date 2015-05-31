@@ -40,23 +40,17 @@ function initMakeChangeHandler() {
 }
 
 function loadMakes() {
-    return new Promise((resolve, reject) =>
-        loadJsonp("//m.mobile.de/svc/r/makes/CarXXX", makeData => {
-            makeData.makes.forEach(
-                    make => $makeDropdown.append("<option value=\"" + make.i + "\">" + make.n + "</option>"));
-            resolve();
-        }, () => reject()));
+    return loadJsonp("//m.mobile.de/svc/r/makes/Car")
+            .then(makeData => makeData.makes.forEach(
+                    make => $makeDropdown.append("<option value=\"" + make.i + "\">" + make.n + "</option>")));
 }
 
 function loadModels() {
     const makeId = $makeDropdown.val();
     $modelDropdown.find("option").remove();
-    return new Promise((resolve, reject) =>
-        loadJsonp("//m.mobile.de/svc/r/models/" + makeId, modelData => {
-            modelData.models.forEach(
-                    model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>"));
-            resolve();
-        }, () => reject()));
+    return loadJsonp("//m.mobile.de/svc/r/models/"+ makeId)
+            .then(modelData => modelData.models.forEach(
+                    model => $modelDropdown.append("<option value=\"" + model.i + "\">" + model.n + "</option>")));
 }
 
 

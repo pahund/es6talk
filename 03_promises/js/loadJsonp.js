@@ -1,19 +1,20 @@
-function loadJsonp(url, success = () => {}, failure = () => { throw new Error("error loading data from " + url); }) {
+function loadJsonp(url) {
     const script = document.createElement("script");
 
-    let timeoutHandler = window.setTimeout(() => {
-        window.jsonpCallback = () => {};
-        failure();
-    }, 3000);
+    return new Promise((resolve, reject) => {
+        let timeoutHandler = window.setTimeout(() => {
+            window.jsonpCallback = () => {};
+            reject();
+        }, 3000);
 
-    window.jsonpCallback = (data) => {
-        window.clearTimeout(timeoutHandler);
-        success(data);
-    };
+        window.jsonpCallback = (data) => {
+            window.clearTimeout(timeoutHandler);
+            resolve(data);
+        };
 
-    script.src = url + "?_jsonp=jsonpCallback";
-
-    document.getElementsByTagName("head")[0].appendChild(script);
+        script.src = url + "?_jsonp=jsonpCallback";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
 }
 
 export default loadJsonp;
