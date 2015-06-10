@@ -97,3 +97,10 @@ body {
     right: 10px;
     bottom: 10px;
 }
+
+#gh-link {
+    font-size: 2em;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+}
