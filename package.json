@@ -1,12 +1,12 @@
 {
   "name": "es6talk",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Code examples from by talk about ECMAScript 6",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack",
-    "start": "webpack-dev-server --config webpack.config.dev.js"
+    "postinstall": "node_modules/webpack/bin/webpack.js",
+    "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js"
   },
   "author": "Patrick Hund <pahund@team-mobile.de>",
   "license": "MIT",
